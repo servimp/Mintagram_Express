@@ -11,6 +11,9 @@ Notes:
   
   This will seed the DB with two users and 4 posts.
   
+* A JWT is generated on Login, the life of this first token is 2 minutes.
+* After two minutes the Refresh Token Controller refreshes the token and defines a hour as life of the token as default.
+  
 Steps to run this project:
 
 1. Run `npm i` command
