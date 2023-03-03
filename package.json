@@ -36,7 +36,8 @@
       "typeorm": "0.3.12"
    },
    "scripts": {
-      "start": "node index.js",
+      "start": "node build/index.js",
+      "build": "tsc",
       "typeorm": "typeorm-ts-node-commonjs",
       "test": "jest"
    }
