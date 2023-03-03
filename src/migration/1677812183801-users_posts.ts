@@ -87,5 +87,4 @@ export class usersPosts1677812183801 implements MigrationInterface {
         await queryRunner.query(`DROP TABLE "user"`);
         await queryRunner.query(`DROP TABLE "post"`);
     }
-
 }
