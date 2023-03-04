@@ -37,7 +37,7 @@
    },
    "scripts": {
       "build": "NODE_ENV=production tsc",
-      "start": "NODE_ENV=production node build/index.js",
+      "start": "NODE_ENV=production sh -c 'npm run typeorm -- -d build/data-source.js migration:run && node build/index.js'",
       "dev": "ts-node src/index.ts",
       "prod": "NODE_ENV=production node build/index.js",
       "typeorm": "typeorm-ts-node-commonjs",
