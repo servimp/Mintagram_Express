@@ -13,10 +13,10 @@ var password;
 var database;
 if (process.env.NODE_ENV === 'production') {
     migrations = ["build/migration/**/*.js"];
-    host = "containers-us-west-96.railway.app";
-    port = 6454;
+    host = "containers-us-west-38.railway.app";
+    port = 5989;
     username = "postgres";
-    password = "nsl6w0CIuLAFnEor6Tei";
+    password = "7QjLptsOf6qOtoh8erSb";
     database = "railway";
 }
 else {
