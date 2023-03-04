@@ -96,3 +96,5 @@ data_source_1.AppDataSource.initialize().then(function () { return __awaiter(voi
     });
 }); }).catch(function (error) { return console.log(error); });
 //# sourceMappingURL=index.js.map
+
+export default app;
