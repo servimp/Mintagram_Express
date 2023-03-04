@@ -37,7 +37,6 @@
    },
    "scripts": {
       "start": "node build/index.js",
-      "build": "tsc",
       "typeorm": "typeorm-ts-node-commonjs",
       "test": "jest"
    }
