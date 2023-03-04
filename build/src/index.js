@@ -72,8 +72,8 @@ var cookie_parser_1 = __importDefault(require("cookie-parser"));
 var dotenv_1 = require("dotenv");
 (0, dotenv_1.config)();
 // rest of your code here
+var app = express();
 data_source_1.AppDataSource.initialize().then(function () { return __awaiter(void 0, void 0, void 0, function () {
-    var app = express();
     return __generator(this, function (_a) {
         app = (0, express_1.default)();
         app.use(bodyParser.json());
