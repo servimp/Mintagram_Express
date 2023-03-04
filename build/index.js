@@ -67,6 +67,7 @@ var cors_1 = __importDefault(require("cors"));
 var cookie_parser_1 = __importDefault(require("cookie-parser"));
 var dotenv_1 = require("dotenv");
 (0, dotenv_1.config)();
+var app;
 // rest of your code here
 console.log("before the datasource initialize");
 data_source_1.AppDataSource.initialize().then(function () { return __awaiter(void 0, void 0, void 0, function () {
