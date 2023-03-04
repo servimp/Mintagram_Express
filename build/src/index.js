@@ -72,9 +72,9 @@ var cookie_parser_1 = __importDefault(require("cookie-parser"));
 var dotenv_1 = require("dotenv");
 (0, dotenv_1.config)();
 // rest of your code here
-var app;
+
 data_source_1.AppDataSource.initialize().then(function () { return __awaiter(void 0, void 0, void 0, function () {
-    
+    var app;
     return __generator(this, function (_a) {
        
         app = (0, express_1.default)();
@@ -98,10 +98,9 @@ data_source_1.AppDataSource.initialize().then(function () { return __awaiter(voi
         console.log("Express server has started on port 5000. Open http://localhost:5000/users to see results");
         // start express server
         app.listen(5000);
-        return [2 /*return*/];
+        // Export the Express API
+        module.exports = app;
     });
 }); }).catch(function (error) { return console.log(error); });
 //# sourceMappingURL=index.js.map
 
-// Export the Express API
-module.exports = app;
