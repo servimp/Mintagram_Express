@@ -73,8 +73,9 @@ var dotenv_1 = require("dotenv");
 (0, dotenv_1.config)();
 // rest of your code here
 data_source_1.AppDataSource.initialize().then(function () { return __awaiter(void 0, void 0, void 0, function () {
-    var app;
+    
     return __generator(this, function (_a) {
+        var app;
         app = (0, express_1.default)();
         app.use(bodyParser.json());
         // enable CORS
