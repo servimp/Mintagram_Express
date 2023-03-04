@@ -3,17 +3,14 @@ import express, { Request, Response } from 'express';
 import * as bodyParser from "body-parser"
 import { AppDataSource } from "./data-source"
 import { Routes } from "./routes"
-import { User } from "./entity/User"
-import { Post } from "./entity/Post"
 import cors from 'cors';
-import { hash } from 'bcrypt';
 import cookieParser from 'cookie-parser';
 import { config } from 'dotenv';
 config();
 
 // rest of your code here
 
-AppDataSource.initialize().then(async () => {
+AppDataSource.initialize();
 
     // create express app
     const app = express()
@@ -44,5 +41,3 @@ AppDataSource.initialize().then(async () => {
 
     // start express server
     app.listen(5000)
-
-}).catch(error => console.log(error))
