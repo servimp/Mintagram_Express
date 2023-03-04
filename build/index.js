@@ -60,4 +60,3 @@ console.log("Express server has started on port 5000. Open http://localhost:5000
 // start express server
 app.listen(5000);
 //# sourceMappingURL=index.js.map
-export default app;
