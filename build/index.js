@@ -56,7 +56,7 @@ routes_1.Routes.forEach(function (route) {
         }
     });
 });
-console.log("Express server has started on port 5000. Open http://localhost:5000/users to see results");
+console.log("Express server has started. Open http://localhost:5000/users to see results");
 // start express server
 app.listen(5000);
 //# sourceMappingURL=index.js.map
