@@ -38,6 +38,3 @@ AppDataSource.initialize();
 
     console.log("Express server has started. Open http://localhost:5000/users to see results")
 
-
-    // start express server
-    app.listen(5000)
