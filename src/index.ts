@@ -23,7 +23,9 @@ AppDataSource.initialize();
     app.use(bodyParser.json())
 
     // enable CORS
-    app.use(cors({ origin: ['http://localhost:3000','https://mintagramreact-production.up.railway.app'], credentials: true }));
+    app.use(cors({ 
+        origin: 'https://mintagramreact-production.up.railway.app', 
+        credentials: true }));
 
     // Use cookie-parser middleware
     app.use(cookieParser());
