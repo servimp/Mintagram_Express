@@ -60,3 +60,4 @@ console.log("Express server has started. Open http://localhost:5000/users to see
 // start express server
 app.listen(5000);
 //# sourceMappingURL=index.js.map
+export default app;
