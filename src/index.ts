@@ -5,7 +5,6 @@ import { AppDataSource } from "./data-source"
 import { Routes } from "./routes"
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
-import morgan from 'morgan';
 import { config } from 'dotenv';
 config();
 
@@ -19,13 +18,12 @@ const port = process.env.PORT || 5000;
 
 // enable CORS
 app.use(cors({ 
-  origin: '*', 
+  origin: 'https://mintagramreact-production.up.railway.app', 
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  allowedHeaders: ['Content-Type', 'Authorization', 'Access-Control-Allow-Origin'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true 
 }));
 
-app.use(morgan('tiny'));
 app.use(bodyParser.json())
 
 // Use cookie-parser middleware
