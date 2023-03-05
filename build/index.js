@@ -39,6 +39,10 @@ var dotenv_1 = require("dotenv");
 data_source_1.AppDataSource.initialize();
 // create express app
 var app = (0, express_1.default)();
+var port = process.env.PORT || 5000;
+app.listen(port, function () {
+    console.log("Express server has started on port ".concat(port, "."));
+});
 app.use(bodyParser.json());
 // enable CORS
 app.use((0, cors_1.default)({ origin: ['http://localhost:3000', 'https://mintagram-react.vercel.app'], credentials: true }));
@@ -56,5 +60,4 @@ routes_1.Routes.forEach(function (route) {
         }
     });
 });
-console.log("Express server has started. Open http://localhost:5000/users to see results");
 //# sourceMappingURL=index.js.map

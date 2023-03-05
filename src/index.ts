@@ -14,6 +14,12 @@ AppDataSource.initialize();
 
     // create express app
     const app = express()
+    const port = process.env.PORT || 5000;
+
+    app.listen(port, () => {
+        console.log(`Express server has started on port ${port}.`);
+      });
+
     app.use(bodyParser.json())
 
     // enable CORS
@@ -35,6 +41,4 @@ AppDataSource.initialize();
         })
     })
   
-
-    console.log("Express server has started. Open http://localhost:5000/users to see results")
 
