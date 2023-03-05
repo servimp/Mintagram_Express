@@ -42,7 +42,7 @@ var app = (0, express_1.default)();
 var port = process.env.PORT || 5000;
 // enable CORS
 app.use((0, cors_1.default)({
-    origin: 'https://mintagramreact-production.up.railway.app',
+    origin: ['https://mintagramreact-production.up.railway.app', 'http://localhost:3000'],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
@@ -64,6 +64,6 @@ routes_1.Routes.forEach(function (route) {
 });
 app.listen(port, function () {
     console.log('testing other logs on start-up');
-    console.log("5Express server has started on port: ".concat(port, "."));
+    console.log("Express server has started on port: ".concat(port, "."));
 });
 //# sourceMappingURL=index.js.map

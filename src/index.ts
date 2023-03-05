@@ -18,7 +18,7 @@ const port = process.env.PORT || 5000;
 
 // enable CORS
 app.use(cors({ 
-  origin: 'https://mintagramreact-production.up.railway.app', 
+  origin: ['https://mintagramreact-production.up.railway.app','http://localhost:3000'], 
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true 
@@ -44,5 +44,5 @@ Routes.forEach(route => {
 
 app.listen(port, () => {
     console.log('testing other logs on start-up');
-    console.log(`5Express server has started on port: ${port}.`);
+    console.log(`Express server has started on port: ${port}.`);
 });
