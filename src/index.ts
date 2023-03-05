@@ -5,6 +5,7 @@ import { AppDataSource } from "./data-source"
 import { Routes } from "./routes"
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
+import morgan from 'morgan';
 import { config } from 'dotenv';
 config();
 
@@ -12,37 +13,37 @@ config();
 
 AppDataSource.initialize();
 
-    // create express app
-    const app = express()
-    const port = process.env.PORT || 5000;
+// create express app
+const app = express()
+const port = process.env.PORT || 5000;
 
-    // enable CORS
-    app.use(cors({ 
-        origin: 'https://mintagramreact-production.up.railway.app/', 
-        credentials: true }));
+// enable CORS
+app.use(cors({ 
+  origin: '*', 
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  allowedHeaders: ['Content-Type', 'Authorization', 'Access-Control-Allow-Origin'],
+  credentials: true 
+}));
 
+app.use(morgan('tiny'));
+app.use(bodyParser.json())
 
+// Use cookie-parser middleware
+app.use(cookieParser());
 
-    app.use(bodyParser.json())
+// register express routes from defined application routes
+Routes.forEach(route => {
+    (app as any)[route.method](route.route, (req: Request, res: Response, next: Function) => {
+        const result = (new (route.controller as any))[route.action](req, res, next)
+        if (result instanceof Promise) {
+            result.then(result => result !== null && result !== undefined ? res.send(result) : undefined)
 
-    
-
-    // Use cookie-parser middleware
-    app.use(cookieParser());
-
-    // register express routes from defined application routes
-    Routes.forEach(route => {
-        (app as any)[route.method](route.route, (req: Request, res: Response, next: Function) => {
-            const result = (new (route.controller as any))[route.action](req, res, next)
-            if (result instanceof Promise) {
-                result.then(result => result !== null && result !== undefined ? res.send(result) : undefined)
-
-            } else if (result !== null && result !== undefined) {
-                res.json(result)
-            }
-        })
+        } else if (result !== null && result !== undefined) {
+            res.json(result)
+        }
     })
-  
-    app.listen(port, () => {
-        console.log(`Express server has started on port: ${port}.`);
-      });
+})
+
+app.listen(port, () => {
+    console.log(`Express server has started on port: ${port}.`);
+});
