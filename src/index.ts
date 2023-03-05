@@ -16,16 +16,18 @@ AppDataSource.initialize();
     const app = express()
     const port = process.env.PORT || 5000;
 
+    // enable CORS
+    app.use(cors({ 
+        origin: 'https://mintagramreact-production.up.railway.app/', 
+        credentials: true }));
+
     app.listen(port, () => {
         console.log(`Express server has started on port ${port}.`);
       });
 
     app.use(bodyParser.json())
 
-    // enable CORS
-    app.use(cors({ 
-        origin: 'https://mintagramreact-production.up.railway.app/', 
-        credentials: true }));
+    
 
     // Use cookie-parser middleware
     app.use(cookieParser());
