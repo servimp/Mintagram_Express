@@ -43,5 +43,6 @@ Routes.forEach(route => {
 })
 
 app.listen(port, () => {
+    console.log('testing other logs on start-up');
     console.log(`5Express server has started on port: ${port}.`);
 });
