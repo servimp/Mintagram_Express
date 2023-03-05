@@ -4,8 +4,6 @@ Notes:
 * Postgres is the DB used in the project.
 * Migrations are located in the folder src/migration
 * To run the migrations:
-
-  `npm run typeorm -- -d ./src/data-source.ts migration:generate src/migration/users_posts`
   
   `npm run typeorm -- -d src/data-source.ts migration:run`
   
