@@ -21,9 +21,7 @@ AppDataSource.initialize();
         origin: 'https://mintagramreact-production.up.railway.app/', 
         credentials: true }));
 
-    app.listen(port, () => {
-        console.log(`Express server has started on port ${port}.`);
-      });
+
 
     app.use(bodyParser.json())
 
@@ -45,4 +43,6 @@ AppDataSource.initialize();
         })
     })
   
-
+    app.listen(port, () => {
+        console.log(`Express server has started on port: ${port}.`);
+      });
