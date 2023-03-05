@@ -11,6 +11,7 @@ Notes:
   
 * A JWT is generated on Login, the life of this first token is 2 minutes.
 * After two minutes the Refresh Token Controller refreshes the token and defines an hour as life of the token as default.
+* Test can be run using `npm run tests`
   
 Steps to run this project:
 
