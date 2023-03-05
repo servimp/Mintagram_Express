@@ -40,12 +40,14 @@ data_source_1.AppDataSource.initialize();
 // create express app
 var app = (0, express_1.default)();
 var port = process.env.PORT || 5000;
-app.listen(port, function () {
-    console.log("Express server has started on port ".concat(port, "."));
-});
-app.use(bodyParser.json());
 // enable CORS
-app.use((0, cors_1.default)({ origin: ['http://localhost:3000', 'https://mintagram-react.vercel.app'], credentials: true }));
+app.use((0, cors_1.default)({
+    origin: 'https://mintagramreact-production.up.railway.app',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true
+}));
+app.use(bodyParser.json());
 // Use cookie-parser middleware
 app.use((0, cookie_parser_1.default)());
 // register express routes from defined application routes
@@ -59,5 +61,9 @@ routes_1.Routes.forEach(function (route) {
             res.json(result);
         }
     });
+});
+app.listen(port, function () {
+    console.log('testing other logs on start-up');
+    console.log("5Express server has started on port: ".concat(port, "."));
 });
 //# sourceMappingURL=index.js.map
